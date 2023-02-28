@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Lesson 5</title>
+  </head>
+  <body>
+    <h1 style="color: rgb(20, 238, 60); font-size: 20px">
+      Користувача поступово вводить показники температури протягом року. Знайти
+      середню температуру.
+    </h1>
+
+    <script>
+      let totalSum = 0
+      for (let i = 1; i <= 12; i++) {
+        let oneMonthTemperature = parseInt(
+          prompt(`Укажите температуру за ${i} месяц`)
+        )
+        totalSum = totalSum + oneMonthTemperature
+      }
+      let mediumTemperature = totalSum / 12
+      document.write(`Средняя температура  = ${mediumTemperature.toFixed(2)}`)
+    </script>
+  </body>
+</html>

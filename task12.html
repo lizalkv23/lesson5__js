@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Lesson 5</title>
+  </head>
+  <body>
+    <h1 style="color: rgb(20, 238, 60); font-size: 20px">
+      Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у
+      кожній позиції вибирається як одне з чотирьох зображень. Вивести ці
+      зображення i повідомити виграш користувача (три перших зображення 200 грн,
+      три других – 500, три третіх – 1000).
+    </h1>
+
+    <script>
+      let numberOne = Math.floor(Math.random() * 3) + 1
+      let numberTwo = Math.floor(Math.random() * 3) + 1
+      let numberThree = Math.floor(Math.random() * 3) + 1
+      let resultNumber
+      for (let i = 1; i <= 3; i++) {
+        switch (i) {
+          case 1:
+            resultNumber = numberOne
+            break
+          case 2:
+            resultNumber = numberTwo
+            break
+          case 3:
+            resultNumber = numberThree
+            break
+        }
+        document.write(
+          `<img src="./img/${resultNumber}.png" alt="" style="width: 150px; vertical-align: top;height: 150px; object-fit: contain;">`
+        )
+        let winning
+      }
+      if (numberOne === numberTwo && numberThree === numberOne) {
+        switch (resultNumber) {
+          case 1:
+            winning = `Поздровляю 200гр ваши`
+            break
+          case 2:
+            winning = `Поздровляю 500гр ваши`
+            break
+          case 3:
+            winning = `Поздровляю 1000гр ваши`
+            break
+        }
+        document.write(`${winning}`)
+      } else document.write(`Увы... В следующий раз повезёт`)
+    </script>
+  </body>
+</html>

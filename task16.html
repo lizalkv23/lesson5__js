@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Lesson 5</title>
+  </head>
+  <body>
+    <h1 style="color: rgb(28, 10, 83); font-size: 20px">
+      Користувач поступово вводить прибуток магазину за кожен день протягом N
+      тижнів. Знайти загальну величину прибутку та вивести величину прибутку
+      протягом кожного окремого тижня.
+    </h1>
+
+    <script>
+      const quantityWeeks = parseInt(prompt(`Введите количество недель`, "1"))
+      let sumOneDay
+      let allSum = 0
+      let weeksSumOne
+      for (let i = 1; i <= quantityWeeks; i++) {
+        weeksSumOne = 0
+        for (let n = 1; n <= 7; n++) {
+          sumOneDay = parseInt(
+            prompt(`Укажите сумму за ${i} неделю, ${n} день`)
+          )
+          allSum = allSum + sumOneDay
+          weeksSumOne = weeksSumOne + sumOneDay
+        }
+        document.write(`<div >результат за неделю ${i} = ${weeksSumOne} </div>`)
+      }
+      document.write(
+        `<div style="color: rgb(28, 10, 83); font-size: 20px; font-weight: 700;"> Количество недель ${quantityWeeks} </div>`
+      )
+      document.write(
+        `<div style= " text-transform: uppercase;font-weight: 600;"> результат общий =  ${allSum} </div>`
+      )
+    </script>
+  </body>
+</html>

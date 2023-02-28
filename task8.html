@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Lesson 5</title>
+  </head>
+  <body>
+    <h1 style="color: rgb(3, 14, 48); font-size: 20px">
+      Користувач загадує число. За 3 спроби комп’ютер намагається вгадати число
+      користувача
+    </h1>
+    <script>
+      let userNumber = parseInt(
+        prompt(`Загадайте число, я попробую его угадать`)
+      )
+      let question
+      for (let i = 0; i < 3; i++) {
+        let randomNumber = Math.floor(Math.random() * (userNumber + 1))
+        question = confirm(`Вы загадали ${randomNumber}?`)
+        if (question == true) {
+          document.write(`Я угадал`)
+          break
+        }
+      }
+      if (question == false) {
+        document.write(`я не угадал`)
+      }
+    </script>
+  </body>
+</html>

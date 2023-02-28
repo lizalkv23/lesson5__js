@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Lesson 5</title>
+  </head>
+  <body>
+    <h1 style="color: rgb(24, 31, 117); font-size: 20px">
+      Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі
+      розміром N*M. Маючи К снарядів користувач намагається потопити корабель.
+    </h1>
+    <script>
+      const userQuantityRow = parseInt(
+        prompt(`Введите количество клеток по оси Х от 1-9`)
+      )
+      const userQuantityColumn = parseInt(
+        prompt(`Введите количество клеток по оси Y от 1-9`)
+      )
+      const axisXShip = Math.floor(Math.random() * userQuantityRow + 1)
+      const axisYShip = Math.floor(Math.random() * userQuantityColumn + 1)
+      const userQuantityAttempts = parseInt(
+        prompt(
+          `Количество попыток за которые вы хотите угадать где корабль находиться`
+        )
+      )
+      for (let i = 1; i <= userQuantityAttempts; i++) {
+        const coordinateX = parseInt(prompt(`Ваш выстрел по оси X`))
+        const coordinateY = parseInt(prompt(`Ваш выстрел по оси Y`))
+        if (axisXShip == coordinateX && axisYShip == coordinateY) {
+          document.write(`вы угадали`)
+          break
+        }
+        alert(
+          `попробуйте ещё у вас осталось ${userQuantityAttempts - i} попыток`
+        )
+      }
+      // Не знаю как правильно вывести эту запись. Подскажите пожалуйста.
+      //   alert(`В следующий раз вам повезет`)
+    </script>
+  </body>
+</html>

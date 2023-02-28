@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Lesson 5</title>
+  </head>
+  <body>
+    <h1 style="color: rgb(42, 36, 12); font-size: 20px">
+      Каса. Користувачу повідомляють суму, яку йому треба сплатити. Користувач
+      поступово вводить суму грошей до тих пір, поки суми не буде достатньо для
+      оплати товарів (кожного разу користувачу повідомляють, яку ще суму
+      потрібно ввести).
+    </h1>
+
+    <script>
+      let totalSum = 100
+      do {
+        let userSum = parseInt(
+          prompt(
+            `Сумма к оплате составляет ${totalSum} грн. Сколько вы заплатите сейчас?`
+          )
+        )
+        totalSum -= userSum
+        if (totalSum === 0) alert("Спасибо за покупку")
+        else if (totalSum < 0) {
+          document.write(
+            `Спасибо за покупку. У вас есть сдача ${Math.abs(totalSum)} грн`
+          )
+        }
+      } while (totalSum > 0)
+      {
+      }
+    </script>
+  </body>
+</html>
